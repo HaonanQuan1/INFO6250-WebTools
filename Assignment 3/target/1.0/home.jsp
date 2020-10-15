@@ -47,8 +47,8 @@
 <h3>Please make your selection below</h3>
 <form action="movie" method="GET">
     <select name="option">
-        <option value="Browse">Check User Details</option>
-        <option value="Add">Add New User</option>
+        <option value="Browse">Check Movie Details</option>
+        <option value="Add">Add New Movie</option>
     </select><br/><br/>
     <input type="submit" value="Submit" >
 </form>

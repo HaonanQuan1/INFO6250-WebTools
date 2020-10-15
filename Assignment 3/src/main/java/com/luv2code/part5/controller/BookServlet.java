@@ -1,0 +1,58 @@
+package com.luv2code.part5.controller;
+
+import com.luv2code.part5.DAO.BookDao;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+@WebServlet(name = "BookServlet")
+public class BookServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        response
+        RequestDispatcher requestDispatcher;
+        String amount = request.getParameter("amount");
+        int count = Integer.valueOf(amount);
+
+        List<String> isbn = new ArrayList<>();
+        List<String> title = new ArrayList<>();
+        List<String> authors = new ArrayList<>();
+        List<String> prices = new ArrayList<>();
+        for(int i = 0 ; i < count; i++){
+            isbn.add(request.getParameter("isbn" +String.valueOf(i)));
+            title.add(request.getParameter("title" + String.valueOf(i)));
+            authors.add(request.getParameter("authors" + String.valueOf(i)));
+            prices.add(request.getParameter("price" + String.valueOf(i)));
+        }
+//        Connection connection = null;
+//        PreparedStatement statement = null;
+//        try{
+//
+//        }
+        BookDao bookdao = new BookDao();
+        int res = 0;
+        try {
+             res = bookdao.addBooks(isbn,title,authors,prices);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if(res > 0){
+            requestDispatcher = getServletContext().getRequestDispatcher("/successAddBooks.jsp");
+            request.setAttribute("amount",count);
+            requestDispatcher.forward(request,response);
+        }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+}

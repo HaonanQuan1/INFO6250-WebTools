@@ -8,8 +8,16 @@
     <servlet-name>movie</servlet-name>
     <servlet-class>com.luv2code.part4.controller.MovieServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>book</servlet-name>
+    <servlet-class>com.luv2code.part5.controller.BookServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>movie</servlet-name>
     <url-pattern>/movie</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>book</servlet-name>
+    <url-pattern>/book</url-pattern>
   </servlet-mapping>
 </web-app>
