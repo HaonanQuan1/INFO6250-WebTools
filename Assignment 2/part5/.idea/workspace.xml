@@ -2,11 +2,33 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="part5:war exploded" />
+      <artifact name="1.0:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66aa35c8-fa89-4a81-9f2a-b3e4680d323e" name="Default Changelist" comment="" />
+    <list default="true" id="66aa35c8-fa89-4a81-9f2a-b3e4680d323e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../part4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part8/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Assignment 3/.idea/Assignment 3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part3/src/main/webapp/sqltags.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../part3/src/main/webapp/sqltags.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part3/target/1.0/sqltags.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../part3/target/1.0/sqltags.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part4/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part4/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part4/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part4/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/1.0/WEB-INF/classes/ShowExcelServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/1.0/WEB-INF/classes/ShowExcelServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/1.0/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/1.0/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part6/web/WEB-INF/classes/META-INF/part6.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../part9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assignment 3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Assignment 3/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +46,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -39,7 +64,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1iQyaDn7TUVLbNkhKrNjLRl2SNg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -73,12 +100,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/part5_war_exploded/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="part5:war exploded">
+        <artifact name="1.0:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/part5_war_exploded" />
+            <option name="CONTEXT_PATH" value="/1_0_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -142,6 +168,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="part5:war exploded" />
+          <artifact name="1.0:war exploded" />
         </option>
       </method>
     </configuration>
@@ -158,10 +185,26 @@
       <updated>1601854171964</updated>
       <workItem from="1601854175828" duration="3581000" />
       <workItem from="1601863976476" duration="147000" />
+      <workItem from="1602858843992" duration="153000" />
+      <workItem from="1602859303647" duration="36000" />
+      <workItem from="1602886403778" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

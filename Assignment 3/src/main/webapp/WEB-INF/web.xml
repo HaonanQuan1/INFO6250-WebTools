@@ -12,12 +12,35 @@
     <servlet-name>book</servlet-name>
     <servlet-class>com.luv2code.part5.controller.BookServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>cart</servlet-name>
+    <servlet-class>com.luv2code.part6.controller.ShoppingCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CSV</servlet-name>
+    <servlet-class>com.luv2code.part7.controller.CSVServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>movie</servlet-name>
-    <url-pattern>/movie</url-pattern>
+    <url-pattern>/part4/movie</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>book</servlet-name>
-    <url-pattern>/book</url-pattern>
+    <url-pattern>/part5/book</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cart</servlet-name>
+    <url-pattern>/part6/cart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CSV</servlet-name>
+    <url-pattern>/part7/csv</url-pattern>
+  </servlet-mapping>
+
+<!--  <jsp-config>-->
+    <taglib>
+      <taglib-uri>myTag</taglib-uri>
+      <taglib-location>/WEB-INF/myTag.tld</taglib-location>
+    </taglib>
+<!--  </jsp-config>-->
 </web-app>

@@ -42,14 +42,14 @@ public class MovieServlet extends HttpServlet {
                 movie.setYear(year);
                 request.setAttribute("movieInstance",movie);
                 System.out.println(movie.getActor());
-                requestDispatcher = getServletContext().getRequestDispatcher("/successAdded.jsp");
+                requestDispatcher = getServletContext().getRequestDispatcher("/part4/successAdded.jsp");
                 try{
                     requestDispatcher.forward(request, response);
                 }catch(ServletException | IOException e){
                     out.println(e);
                 }
             }else{
-                requestDispatcher = getServletContext().getRequestDispatcher("/error.jsp");
+                requestDispatcher = getServletContext().getRequestDispatcher("/part4/error.jsp");
                 requestDispatcher.forward(request, response);
             }
         } else if (option.equalsIgnoreCase("browse")) {
@@ -63,7 +63,7 @@ public class MovieServlet extends HttpServlet {
                 e.printStackTrace();
             }
             if(list == null || list.isEmpty()){
-                requestDispatcher = getServletContext().getRequestDispatcher("/noMovieFound.jsp");
+                requestDispatcher = getServletContext().getRequestDispatcher("/part4/noMovieFound.jsp");
                 try {
                     requestDispatcher.forward(request, response);
                 } catch (ServletException | IOException ex) {
@@ -72,7 +72,7 @@ public class MovieServlet extends HttpServlet {
             }else{
                 request.setAttribute("searchedMovies",list);
                 System.out.println(list.get(0).getTitle());
-                requestDispatcher = getServletContext().getRequestDispatcher("/successBrowse.jsp");
+                requestDispatcher = getServletContext().getRequestDispatcher("/part4/successBrowse.jsp");
                 try{
                     requestDispatcher.forward(request,response);
                 }catch (ServletException | IOException e){
@@ -85,7 +85,7 @@ public class MovieServlet extends HttpServlet {
     public void handleServletRequest(String option, HttpSession session, HttpServletRequest request, HttpServletResponse response){
         RequestDispatcher requestDispatcher;
         if(option.equals("Add")) {
-            requestDispatcher = getServletContext().getRequestDispatcher("/addNewMovie.jsp");
+            requestDispatcher = getServletContext().getRequestDispatcher("/part4/addNewMovie.jsp");
             try {
                 requestDispatcher.forward(request, response);
             } catch (ServletException | IOException e) {
@@ -93,7 +93,7 @@ public class MovieServlet extends HttpServlet {
             }
 
         }else if(option.equals("Browse")){
-            requestDispatcher = getServletContext().getRequestDispatcher("/browseMovie.jsp");
+            requestDispatcher = getServletContext().getRequestDispatcher("/part4/browseMovie.jsp");
             try{
                 requestDispatcher.forward(request,response);
             }catch (ServletException | IOException e){

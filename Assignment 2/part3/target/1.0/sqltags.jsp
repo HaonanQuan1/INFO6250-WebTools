@@ -52,7 +52,7 @@
                    url="jdbc:mysql://localhost:3306/WEBTOOLS?useSSL=false&serverTimezone=UTC"
                    user="root"  password="Allen19971003"/>
 <sql:update dataSource="${db}" var="count">
-    INSERT INTO usettable VALUES (120,'Nasreen', 'jaha', 25);
+    INSERT INTO usettable VALUES (130,'Nasreen', 'jaha', 25);
 </sql:update>
 
 <sql:query dataSource="${db}" var="rs">

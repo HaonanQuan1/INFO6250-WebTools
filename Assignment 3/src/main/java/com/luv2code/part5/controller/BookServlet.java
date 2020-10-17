@@ -1,6 +1,7 @@
 package com.luv2code.part5.controller;
 
 import com.luv2code.part5.DAO.BookDao;
+import com.luv2code.part5.entity.book;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,11 +28,14 @@ public class BookServlet extends HttpServlet {
         List<String> title = new ArrayList<>();
         List<String> authors = new ArrayList<>();
         List<String> prices = new ArrayList<>();
+        List<book>  books = new ArrayList<>();
         for(int i = 0 ; i < count; i++){
+//            String
             isbn.add(request.getParameter("isbn" +String.valueOf(i)));
             title.add(request.getParameter("title" + String.valueOf(i)));
             authors.add(request.getParameter("authors" + String.valueOf(i)));
             prices.add(request.getParameter("price" + String.valueOf(i)));
+            books.add(new book(isbn.get(i),title.get(i),authors.get(i),Double.parseDouble(prices.get(i))));
         }
 //        Connection connection = null;
 //        PreparedStatement statement = null;
@@ -46,8 +50,9 @@ public class BookServlet extends HttpServlet {
             e.printStackTrace();
         }
         if(res > 0){
-            requestDispatcher = getServletContext().getRequestDispatcher("/successAddBooks.jsp");
+            requestDispatcher = getServletContext().getRequestDispatcher("/part5/successAddBooks.jsp");
             request.setAttribute("amount",count);
+            request.setAttribute("books",books);
             requestDispatcher.forward(request,response);
         }
     }
