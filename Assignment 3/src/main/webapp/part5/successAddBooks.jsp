@@ -13,10 +13,10 @@
 </head>
 <body>
     <c:set var="books" value="${requestScope.books}"/>
-    <h2> books added Successfully!</h2>
-    <c:forEach var="book" items="books" >
-        <p>${book.getTitle()}</p>
-    </c:forEach>
+    <h2>${books.size()} books added Successfully!</h2>
+<%--    <c:forEach var="book" items="books" >--%>
+<%--        <p>${book.getTitle()}</p>--%>
+<%--    </c:forEach>--%>
     <a href="part5Home.jsp">GO back to home page</a>
 </body>
 <a href="../index.jsp">Back to Navigation Page</a>

@@ -1,20 +1,25 @@
 package com.luv2code.part6.entity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Cart {
     private List<Item> cart;
-
+    private Map<String,Item> map;
     public Cart() {
-        cart = new ArrayList<>();
+        this.cart = new ArrayList<>();
+        this.map = new HashMap<>();
     }
 
     public Cart(List<Item> cart) {
         this.cart = cart;
+        this.map = new HashMap<>();
     }
 
     public List<Item> getCart() {
+        cart = new ArrayList<>(map.values());
         return cart;
     }
 
@@ -23,19 +28,25 @@ public class Cart {
     }
 
     public Item findItem(String name){
-        for(Item item: cart){
-            if(name.equals(item.getName())){
-                return item;
-            }
+        if(map.containsKey(name)){
+            return map.get(name);
         }
         return null;
     }
     public void addItem(Item item) {
-        cart.add(item);
+        if(map.containsKey(item.getName())){
+            Item in = map.get(item.getName());
+            in.setCount(in.getCount() + 1);
+            map.put(item.getName(),in);
+        }
+        else{
+            map.put(item.getName(),item);
+        }
     }
 
     public void deleteItem(Item item) {
-        cart.remove(item);
+
+        map.remove(item.getName());
     }
 
     public void deleteItem(String name) {
@@ -45,10 +56,10 @@ public class Cart {
     }
 
     public void modifyItemCount(String name, int count) {
-        for (Item tmp : cart) {
-            if (name.equals(tmp.getName())) {
-                tmp.setCount(count);
-            }
+        if(map.containsKey(name)){
+            Item tmp = map.get(name);
+            tmp.setCount(count);
+            map.put(name,tmp);
         }
     }
 }

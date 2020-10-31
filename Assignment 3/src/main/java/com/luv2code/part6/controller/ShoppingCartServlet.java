@@ -16,6 +16,35 @@ import java.util.Enumeration;
 @WebServlet(name = "ShoppingCartServlet")
 public class ShoppingCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String hidd = request.getParameter("hidd");
+        /**
+         * Delete if hidd is "1" otherwise go to add
+         */
+
+        if(hidd != null && hidd .equals("1")){
+            HttpSession session = request.getSession();
+            Cart cart = (Cart) session.getAttribute("cart");
+            if( cart == null){
+                cart = new Cart();
+            }
+            Enumeration<String> list = request.getParameterNames();
+
+            while(list.hasMoreElements()){
+                String name = list.nextElement();
+                if(name.equals("Submit")) continue;
+                String amount = request.getParameter(name);
+                int count = Integer.parseInt(amount);
+                if(count == 0){
+                    cart.deleteItem(name);
+                }else{
+                    cart.modifyItemCount(name,count);
+                }
+            }
+            session.setAttribute("cart",cart);
+            request.getRequestDispatcher("/part6/ViewCart.jsp").forward(request,response);
+            return ;
+        }
+
         String[] items = request.getParameterValues("books");
         if (items == null)
             items = request.getParameterValues("music");
@@ -57,25 +86,6 @@ public class ShoppingCartServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Cart cart = (Cart) session.getAttribute("cart");
-        if( cart == null){
-            cart = new Cart();
-        }
-        Enumeration<String> items = request.getParameterNames();
 
-        while(items.hasMoreElements()){
-            String name = items.nextElement();
-            if(name.equals("Submit")) continue;
-            String amount = request.getParameter(name);
-            int count = Integer.parseInt(amount);
-            if(count == 0){
-                cart.deleteItem(name);
-            }else{
-                cart.modifyItemCount(name,count);
-            }
-        }
-        session.setAttribute("cart",cart);
-        request.getRequestDispatcher("/part6/ViewCart.jsp").forward(request,response);
     }
 }

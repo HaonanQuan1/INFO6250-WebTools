@@ -52,6 +52,7 @@ public class BookServlet extends HttpServlet {
         if(res > 0){
             requestDispatcher = getServletContext().getRequestDispatcher("/part5/successAddBooks.jsp");
             request.setAttribute("amount",count);
+//            System.out.println(books.get(0).getTitle());
             request.setAttribute("books",books);
             requestDispatcher.forward(request,response);
         }

@@ -15,25 +15,23 @@
 <body>
     <c:set var="cart" value="${sessionScope.cart}"/>
     <h2 align="center"> View Your Cart</h2>
-    <form action="cart" method="get">
+    <form action="cart" method="post">
         <table border="1" align="center">
-<%--            <tr>--%>
-<%--                <th>--%>
-<%--                    Object--%>
-<%--                </th>--%>
-<%--                <th>--%>
-<%--                    Amount--%>
-<%--                </th>--%>
-<%--            </tr>--%>
             <c:if test="${cart != null}">
                 <c:forEach var="item" items="${cart.cart}">
                     <tr>
-                            ${item.name}
+                        <td>
+                                ${item.name}
+                        </td>
+                        <td>
+                            <input type="text" name="${item.name}" value="${item.count}"/>
+                        </td>
                     </tr>
-                    <input type="text" name="${item.name}" value="${item.count}"/>
+
                 </c:forEach>
             </c:if>
         </table>
+        <input name="hidd" type="hidden" value="1">
         <br>
         <div align="center">
             <input type="submit" name="Submit" value="Submit">
