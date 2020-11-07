@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+    	http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+    	http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.luv2code"/>
+
+    <mvc:annotation-driven/>
+<!--    <bean id="viewResolver1" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">-->
+<!--        <property name="order" value="1"/>-->
+<!--        <property name="basename" value="resources.views"/>-->
+<!--    </bean>-->
+    <bean class = "org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--        <property name="order" value="2"/>-->
+        <property name="prefix" value="/view/"/>
+        <property name="suffix" value=".jsp"/>
+
+    </bean>
+<!--    Part 4 -->
+<!--    Controller Set up-->
+    <bean class = "org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean name="/part4/addMovie" class="com.luv2code.part4.controller.AddMovieController"/>
+    <bean name="/part4/browseMovie" class="com.luv2code.part4.controller.BrowseMovieController"/>
+    <bean name="/part4/home" class="com.luv2code.part4.controller.home"/>
+    <bean name="/part4/select" class="com.luv2code.part4.controller.selectController"/>
+<!--    Interceptor Set up-->
+    <!-- Configures Interceptors -->
+    <mvc:interceptors>
+        <!-- This XML will intercept all URIs -->
+        <bean class="com.luv2code.part4.interceptor.Xssinterceptor"></bean>
+        <!-- This XML will apply interceptor to only configured URIs -->
+        <mvc:interceptor>
+            <mvc:mapping path="/part4/addMovie"></mvc:mapping>
+            <mvc:mapping path="/part4/browseMovie"></mvc:mapping>
+            <bean class="com.luv2code.part4.interceptor.Xssinterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+<!-- part5   -->
+<!--  Interceptor Set up  -->
+    <mvc:interceptors>
+        <bean class="com.luv2code.part5.interceptor.Xssinterceptor"/>
+<!--        <mvc:interceptor>-->
+<!--&lt;!&ndash;            <mvc:mapping path=""/>&ndash;&gt;-->
+<!--            <bean class="com.luv2code.part5.interceptor.Xssinterceptor"/>-->
+<!--        </mvc:interceptor>-->
+    </mvc:interceptors>
+
+<!--    bean set up -->
+    <bean class = "org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name = "mappings">
+            <props>
+                <prop key = "/part5/num">NumController</prop>
+                <prop key = "/part5/book">BookController</prop>
+                <prop key="/part5/home">HomeController</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="NumController" class="com.luv2code.part5.controller.NumController"/>
+    <bean id="BookController" class="com.luv2code.part5.controller.BookController"/>
+    <bean id="HomeController" class="com.luv2code.part5.controller.home"/>
+
+<!--  Part6  -->
+
+    <!--  Interceptor Set up  -->
+    <mvc:interceptors>
+        <bean class="com.luv2code.part6.interceptor.Xssinterceptor"/>
+        <!--        <mvc:interceptor>-->
+        <!--&lt;!&ndash;            <mvc:mapping path=""/>&ndash;&gt;-->
+        <!--            <bean class="com.luv2code.part5.interceptor.Xssinterceptor"/>-->
+        <!--        </mvc:interceptor>-->
+    </mvc:interceptors>
+
+<!-- Part 7   -->
+
+</beans>
